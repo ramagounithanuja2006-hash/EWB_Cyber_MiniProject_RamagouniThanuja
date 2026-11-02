@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberShield | Cybersecurity Awareness</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="brand">🛡️ Cyber<span>Shield</span></div>
+    <small>Cybersecurity Awareness & Threat Analysis</small>
+  </div>
+  <span class="tag">Educational Demo</span>
+</header>
+
+<nav>
+  <button class="active" data-page="dashboard">Dashboard</button>
+  <button data-page="risks">Risk Assessment</button>
+  <button data-page="phishing">Phishing Check</button>
+  <button data-page="logins">Login Monitoring</button>
+  <button data-page="assistant">Security Assistant</button>
+</nav>
+
+<main>
+
+<section id="dashboard" class="page active">
+  <h1>Cybersecurity Dashboard</h1>
+  <p class="muted">Welcome to CyberShield. Learn about common cyber threats and ways to protect your information.</p>
+
+  <div class="grid">
+    <div class="card"><div class="icon">🔐</div><div class="stat">CIA</div><p>Security principles</p></div>
+    <div class="card"><div class="icon">📧</div><div class="stat">01</div><p>Phishing analysis tool</p></div>
+    <div class="card"><div class="icon">📊</div><div class="stat">05</div><p>Sample login records</p></div>
+    <div class="card"><div class="icon">🤖</div><div class="stat">AI</div><p>Security guidance</p></div>
+  </div>
+
+  <div class="card">
+    <h2>About CyberShield</h2>
+    <p>CyberShield is an educational cybersecurity project that demonstrates risk assessment, phishing warning signs, suspicious login review and safe security practices.</p>
+    <ul>
+      <li>Task A – Cybersecurity risks and CIA triad.</li>
+      <li>Task B – Phishing message analysis.</li>
+      <li>Task C – Suspicious login activity review.</li>
+      <li>Task D – AI security advice evaluation.</li>
+    </ul>
+    <button class="primary" onclick="showPage('risks')">Explore Project</button>
+  </div>
+</section>
+
+<section id="risks" class="page">
+  <h1>Task A – Cybersecurity Risk Assessment</h1>
+  <p class="muted">Understand the three principles of information security.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h2>Confidentiality</h2>
+      <p>Information should be accessible only to authorized people.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧩</div>
+      <h2>Integrity</h2>
+      <p>Information should remain accurate and protected from unauthorized changes.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h2>Availability</h2>
+      <p>Systems and information should be available when required.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Common Cybersecurity Risks</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Risk</th><th>Impact</th><th>Suggested control</th></tr>
+        <tr><td>Phishing</td><td>Credential theft</td><td>Verify messages and links</td></tr>
+        <tr><td>Weak passwords</td><td>Account compromise</td><td>Use unique passwords</td></tr>
+        <tr><td>Malware</td><td>Data damage or theft</td><td>Update security software</td></tr>
+        <tr><td>Unauthorized access</td><td>Privacy loss</td><td>Access control and MFA</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Risk Level Demonstration</h2>
+    <label for="riskType">Select a risk:</label>
+    <select id="riskType">
+      <option value="phishing">Phishing attack</option>
+      <option value="weak">Weak password</option>
+      <option value="malware">Malware infection</option>
+      <option value="access">Unauthorized access</option>
+    </select>
+    <button class="primary" onclick="assessRisk()">Assess Risk</button>
+    <div id="riskResult" class="result"></div>
+  </div>
+</section>
+
+<section id="phishing" class="page">
+  <h1>Task B – Phishing Message Checker</h1>
+  <p class="muted">Paste a suspicious message to check common warning signs.</p>
+
+  <div class="notice">
+    This is an educational keyword checker. It does not visit links or prove whether a message is genuine.
+  </div>
+
+  <div class="card">
+    <label for="emailText">Enter email or message:</label>
+    <textarea id="emailText" placeholder="Paste your sample message here..."></textarea>
+    <button class="primary" onclick="checkPhishing()">Analyze Message</button>
+    <button class="secondary" onclick="loadExample()">Load Example</button>
+    <button class="secondary" onclick="clearEmail()">Clear</button>
+    <div id="phishingResult" class="result"></div>
+  </div>
+
+  <div class="card">
+    <h2>Common Phishing Warning Signs</h2>
+    <ul>
+      <li>Urgent or threatening language.</li>
+      <li>Requests for passwords or OTPs.</li>
+      <li>Unexpected links or attachments.</li>
+      <li>Unknown sender details.</li>
+      <li>Unexpected prizes or offers.</li>
+    </ul>
+    <p><strong>Safety tip:</strong> Do not click suspicious links. Verify the sender independently.</p>
+  </div>
+</section>
+
+<section id="logins" class="page">
+  <h1>Task C – Login Activity Monitoring</h1>
+  <p class="muted">Review fictional sign-in records and identify unusual activity.</p>
+
+  <div class="notice">
+    All records are synthetic examples. They are not connected to real accounts or systems.
+  </div>
+
+  <div class="card">
+    <h2>Sample Sign-in Timeline</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Location</th><th>Activity</th><th>Status</th></tr>
+        </thead>
+        <tbody id="loginRows"></tbody>
+      </table>
+    </div>
+    <button class="primary" onclick="analyzeLogins()">Analyze Login Activity</button>
+    <div id="loginResult" class="result"></div>
+  </div>
+
+  <div class="card">
+    <h2>Security Recommendations</h2>
+    <ul>
+      <li>Review unfamiliar sign-in notifications.</li>
+      <li>Enable multi-factor authentication.</li>
+      <li>Change compromised passwords.</li>
+      <li>Sign out of unfamiliar sessions.</li>
+      <li>Contact the IT/security team.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="assistant" class="page">
+  <h1>Task D – AI Security Assistant</h1>
+  <p class="muted">Learn safe cybersecurity practices.</p>
+
+  <div class="grid">
+    <div class="card"><div class="icon">🔑</div><h2>Password Safety</h2><p>Use long, unique passwords for important accounts.</p></div>
+    <div class="card"><div class="icon">📱</div><h2>MFA</h2><p>Enable multi-factor authentication. Never share verification codes.</p></div>
+    <div class="card"><div class="icon">🔄</div><h2>Updates</h2><p>Keep your operating system and applications updated.</p></div>
+    <div class="card"><div class="icon">📩</div><h2>Email Safety</h2><p>Verify unexpected requests through trusted channels.</p></div>
+  </div>
+
+  <div class="card">
+    <h2>AI Advice: Correct or Incorrect?</h2>
+    <p><strong>Example statement:</strong> "It is safe to share your OTP with a caller who claims to be from the bank."</p>
+    <span class="tag">Incorrect advice</span>
+    <p><strong>Correct guidance:</strong> Never share your OTP, password or verification code with anyone.</p>
+    <button class="primary" onclick="showSafetyQuiz()">Take Security Quiz</button>
+
+    <div id="quiz" class="result">
+      <p><strong>Question:</strong> An unexpected email asks for your password. What should you do?</p>
+      <button class="secondary" onclick="answerQuiz(false)">Reply with your password</button>
+      <button class="secondary" onclick="answerQuiz(true)">Verify through the official website</button>
+      <div id="quizAnswer"></div>
+    </div>
+  </div>
+
+  <div class="notice">
+    AI-generated advice may be inaccurate or incomplete. Verify important security guidance using trusted official sources.
+  </div>
+</section>
+
+</main>
+
+<footer>
+  CyberShield – Beginner Cybersecurity Mini Project<br>
+  Educational demonstration only | No real accounts or systems are accessed
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
